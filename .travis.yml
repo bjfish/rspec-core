@@ -15,12 +15,9 @@ before_install:
 bundler_args: "--binstubs --standalone --without documentation --path ../bundle"
 script: "script/run_build"
 rvm:
-  - 1.8.7
-  - 1.9.2
-  - 1.9.3
-  - 2.0.0
-  - ree
-  - jruby-1.7
+  - 2.7.2
+  - truffleruby-head
+  - truffleruby
 env:
   - JRUBY_OPTS='--dev'
 matrix:
@@ -30,6 +27,6 @@ matrix:
   fast_finish: true
 branches:
   only:
-    - main
-    - /^\d+-\d+-maintenance$/
-    - /^\d+-\d+-dev$/
+    # - master
+    - truffleruby-ci
+    # - /^\d+-\d+-maintenance$/
