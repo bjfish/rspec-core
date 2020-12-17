@@ -2,7 +2,7 @@
 # DO NOT modify it by hand as your changes will get lost the next time it is generated.
 
 function is_mri {
-  if ruby -e "exit(!defined?(RUBY_ENGINE) || RUBY_ENGINE == 'ruby')"; then
+  if ruby -e "exit(!defined?(RUBY_ENGINE) || RUBY_ENGINE == 'ruby' || RUBY_ENGINE == 'truffleruby')"; then
     # RUBY_ENGINE only returns 'ruby' on MRI.
     # MRI 1.8.7 lacks the constant but all other rubies have it (including JRuby in 1.8 mode)
     return 0
